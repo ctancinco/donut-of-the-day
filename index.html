@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut of the Day - Your Daily Sweet Fortune</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-header">
+            <h1 class="logo">Donut of the Day</h1>
+            <p class="tagline">Daily Fortune Collection</p>
+        </div>
+
+        <div class="donut-box">
+            <div class="box-interior">
+                <div class="donut-grid" id="donutGrid"></div>
+            </div>
+        </div>
+
+        <div class="fortune-section" id="fortuneSection">
+            <div class="selected-donut-info" id="selectedInfo">
+                <h2 class="selected-title" id="selectedTitle">Select a donut to reveal your fortune</h2>
+                <p class="selected-desc" id="selectedDesc"></p>
+            </div>
+            <div class="fortune-display" id="fortuneDisplay">
+                <div class="fortune-text" id="fortuneText"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const donuts = [
+            {
+                type: 'strawberry',
+                name: 'Strawberry Bliss',
+                desc: 'Sweet & bright',
+                decoration: '<div class="donut-sprinkle s1"></div><div class="donut-sprinkle s2"></div><div class="donut-sprinkle s3"></div>',
+                fortune: 'Let yourself be silently drawn by the sweet pull of what you truly love.\nIt will not lead you astray.'
+            },
+            {
+                type: 'chocolate',
+                name: 'Chocolate Dream',
+                desc: 'Rich & indulgent',
+                decoration: '<div class="donut-drizzle"></div>',
+                fortune: 'The wound is the place where the Light enters you.\nEmbrace your depth, for it holds your greatest wisdom.'
+            },
+            {
+                type: 'vanilla',
+                name: 'Vanilla Cloud',
+                desc: 'Classic & comforting',
+                decoration: '<div class="donut-glaze"></div>',
+                fortune: 'In your light I learn how to love. In your beauty, how to make poems.\nYou dance inside my chest where no one sees you.'
+            },
+            {
+                type: 'matcha',
+                name: 'Matcha Zen',
+                desc: 'Calm & balanced',
+                decoration: '<div class="donut-powder"></div>',
+                fortune: 'Let silence take you to the core of life.\nIn stillness, you will find what you have been seeking in motion.'
+            },
+            {
+                type: 'blueberry',
+                name: 'Blueberry Burst',
+                desc: 'Fresh & vibrant',
+                decoration: '<div class="donut-spots"></div>',
+                fortune: 'Let the beauty we love be what we do.\nThere are hundreds of ways to kneel and kiss the ground.'
+            },
+            {
+                type: 'caramel',
+                name: 'Caramel Swirl',
+                desc: 'Smooth & golden',
+                decoration: '<div class="donut-swirl"></div>',
+                fortune: 'The universe is not outside of you. Look inside yourself;\nEverything that you want, you already are.'
+            },
+            {
+                type: 'raspberry',
+                name: 'Raspberry Rose',
+                desc: 'Delicate & lovely',
+                decoration: '<div class="donut-heart"></div>',
+                fortune: 'Your heart knows the way. Run in that direction.\nLet love be your compass, and kindness be your map.'
+            },
+            {
+                type: 'lemon',
+                name: 'Lemon Zest',
+                desc: 'Bright & sunny',
+                decoration: '<div class="donut-zest"></div>',
+                fortune: 'The morning breeze has secrets to tell you. Do not go back to sleep.\nYou must ask for what you really want.'
+            },
+            {
+                type: 'cookies',
+                name: 'Cookies & Cream',
+                desc: 'Fun & nostalgic',
+                decoration: '<div class="donut-chunks"></div>',
+                fortune: 'Live life as if everything is rigged in your favor.\nWhat you seek is seeking you, even in the simplest joys.'
+            },
+            {
+                type: 'sprinkles',
+                name: 'Rainbow Sprinkles',
+                desc: 'Joyful & colorful',
+                decoration: '<div class="donut-rainbow"></div>',
+                fortune: 'Dance when you are broken open. Dance when you are whole.\nLet joy be your prayer, and celebration be your path.'
+            }
+        ];
+
+        let selectedDonutIndex = null;
+
+        function initDonutGrid() {
+            const grid = document.getElementById('donutGrid');
+            donuts.forEach((donut, index) => {
+                const card = document.createElement('div');
+                card.className = 'donut-card';
+                card.onclick = () => selectDonut(index);
+
+                const donutEl = document.createElement('div');
+                donutEl.className = 'donut-graphic ' + donut.type;
+                donutEl.innerHTML = '<div class="donut-hole"></div>' + donut.decoration;
+
+                card.appendChild(donutEl);
+                grid.appendChild(card);
+            });
+        }
+
+        function selectDonut(index) {
+            selectedDonutIndex = index;
+            const donut = donuts[index];
+
+            // Update selection styling
+            document.querySelectorAll('.donut-card').forEach((card, i) => {
+                card.classList.toggle('selected', i === index);
+            });
+
+            // Update info
+            document.getElementById('selectedTitle').textContent = donut.name;
+            document.getElementById('selectedDesc').textContent = donut.desc;
+
+            // Show fortune
+            const fortuneDisplay = document.getElementById('fortuneDisplay');
+            const fortuneText = document.getElementById('fortuneText');
+            fortuneText.textContent = donut.fortune;
+
+            fortuneDisplay.classList.add('visible');
+            document.getElementById('fortuneSection').classList.add('active');
+        }
+
+        initDonutGrid();
+    </script>
+</body>
+</html>
