@@ -119,7 +119,7 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -136,6 +136,24 @@ body {
 .donut-card:hover .donut-tooltip {
     opacity: 1;
     transform: translateX(-50%) translateY(-12px);
+}
+
+/* Bottom row tooltips appear below */
+.donut-card:nth-child(n+6) .donut-tooltip {
+    bottom: auto;
+    top: 100%;
+    transform: translateX(-50%) translateY(8px);
+}
+
+.donut-card:nth-child(n+6) .donut-tooltip::after {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: rgba(43, 37, 32, 0.95);
+}
+
+.donut-card:nth-child(n+6):hover .donut-tooltip {
+    transform: translateX(-50%) translateY(12px);
 }
 
 .tooltip-name {
