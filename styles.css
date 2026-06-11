@@ -106,6 +106,53 @@ body {
     transform: translateY(-3px);
 }
 
+.donut-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: rgba(43, 37, 32, 0.95);
+    color: #fdfcfb;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.donut-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(43, 37, 32, 0.95);
+}
+
+.donut-card:hover .donut-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-12px);
+}
+
+.tooltip-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.02em;
+}
+
+.tooltip-desc {
+    font-size: 0.75rem;
+    opacity: 0.85;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.01em;
+}
+
 .donut-graphic {
     width: 100%;
     height: 100%;

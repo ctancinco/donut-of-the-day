@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donut of the Day - Your Daily Sweet Fortune</title>
+    <title>Your Daily Donut</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -117,7 +118,12 @@
                 donutEl.className = 'donut-graphic ' + donut.type;
                 donutEl.innerHTML = '<div class="donut-hole"></div>' + donut.decoration;
 
+                const tooltip = document.createElement('div');
+                tooltip.className = 'donut-tooltip';
+                tooltip.innerHTML = `<div class="tooltip-name">${donut.name}</div><div class="tooltip-desc">${donut.desc}</div>`;
+
                 card.appendChild(donutEl);
+                card.appendChild(tooltip);
                 grid.appendChild(card);
             });
         }
