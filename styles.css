@@ -45,16 +45,6 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.cta {
-    font-size: 1.125rem;
-    color: #2b2520;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    margin-bottom: 2rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-}
-
 .donut-box {
     width: 100%;
     max-width: 900px;
