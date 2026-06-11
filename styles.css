@@ -139,20 +139,20 @@ body {
 }
 
 /* Bottom row tooltips appear below */
-.donut-card:nth-child(n+6) .donut-tooltip {
+.donut-card.bottom-row .donut-tooltip {
     bottom: auto;
     top: 100%;
     transform: translateX(-50%) translateY(8px);
 }
 
-.donut-card:nth-child(n+6) .donut-tooltip::after {
+.donut-card.bottom-row .donut-tooltip::after {
     top: auto;
     bottom: 100%;
     border-top-color: transparent;
     border-bottom-color: rgba(43, 37, 32, 0.95);
 }
 
-.donut-card:nth-child(n+6):hover .donut-tooltip {
+.donut-card.bottom-row:hover .donut-tooltip {
     transform: translateX(-50%) translateY(12px);
 }
 

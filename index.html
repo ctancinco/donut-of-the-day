@@ -151,6 +151,12 @@
             donuts.forEach((donut, index) => {
                 const card = document.createElement('div');
                 card.className = 'donut-card';
+
+                // Add class for bottom row donuts (6-10 are bottom row in 5-column grid)
+                if (index >= 5) {
+                    card.classList.add('bottom-row');
+                }
+
                 card.onclick = () => selectDonut(index);
 
                 const donutEl = document.createElement('div');
