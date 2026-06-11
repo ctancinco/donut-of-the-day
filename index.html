@@ -32,80 +32,119 @@
     </div>
 
     <script>
+        const fortunes = [
+            "Let yourself be silently drawn by the sweet pull of what you truly love.\nIt will not lead you astray.",
+            "The wound is the place where the Light enters you.\nEmbrace your depth, for it holds your greatest wisdom.",
+            "In your light I learn how to love. In your beauty, how to make poems.\nYou dance inside my chest where no one sees you.",
+            "Let silence take you to the core of life.\nIn stillness, you will find what you have been seeking in motion.",
+            "Let the beauty we love be what we do.\nThere are hundreds of ways to kneel and kiss the ground.",
+            "The universe is not outside of you. Look inside yourself;\nEverything that you want, you already are.",
+            "Your heart knows the way. Run in that direction.\nLet love be your compass, and kindness be your map.",
+            "The morning breeze has secrets to tell you. Do not go back to sleep.\nYou must ask for what you really want.",
+            "Live life as if everything is rigged in your favor.\nWhat you seek is seeking you, even in the simplest joys.",
+            "Dance when you are broken open. Dance when you are whole.\nLet joy be your prayer, and celebration be your path.",
+            "Raise your words, not your voice.\nIt is rain that grows flowers, not thunder.",
+            "Yesterday I was clever, so I wanted to change the world.\nToday I am wise, so I am changing myself.",
+            "Stop acting so small.\nYou are the universe in ecstatic motion.",
+            "What you seek is seeking you.\nThe soul has been given its own ears to hear things the mind does not understand.",
+            "Don't grieve. Anything you lose comes round in another form.\nThe garden of the world has no limits, except in your mind.",
+            "Forget safety. Live where you fear to live.\nDestroy your reputation. Be notorious.",
+            "The only lasting beauty is the beauty of the heart.\nLet yourself become living poetry.",
+            "Set your life on fire. Seek those who fan your flames.\nSurround yourself with those who light you up.",
+            "Be like a tree and let the dead leaves drop.\nNew growth is waiting beneath the surface.",
+            "When you do things from your soul, you feel a river moving in you.\nA joy that cannot be contained.",
+            "The art of knowing is knowing what to ignore.\nWisdom tells me I am nothing, love tells me I am everything.",
+            "Close your eyes. Fall in love. Stay there.\nThe quieter you become, the more you can hear.",
+            "Everything in the universe is within you.\nAsk all from yourself.",
+            "Don't be satisfied with stories, how things have gone with others.\nUnfold your own myth.",
+            "Travel brings power and love back into your life.\nDon't just collect places, collect moments.",
+            "You were born with wings, why prefer to crawl through life?\nSpread your wings and soar.",
+            "The moment you accept what troubles you've been given is the moment you realize you have wings.\nYour defects are the way light enters you.",
+            "If light is in your heart, you will find your way home.\nThe wound is where the Light enters you.",
+            "Be empty of worrying. Think of who created thought.\nWhy do you stay in prison when the door is so wide open?",
+            "Study me as much as you like, you will not know me.\nFor I differ in a hundred ways from what you see me to be.",
+            "Lovers don't finally meet somewhere. They're in each other all along.\nLove is the bridge between you and everything.",
+            "This being human is a guest house. Every morning a new arrival.\nWelcome and entertain them all with gratitude.",
+            "Let the lover be disgraceful, crazy, absentminded.\nSomeone sober will worry about things going badly.",
+            "Where there is ruin, there is hope for a treasure.\nOut beyond ideas of wrongdoing and rightdoing, there is a field.",
+            "Sell your cleverness and buy bewilderment.\nThe cure for the pain is in the pain itself.",
+            "When the world pushes you to your knees, you're in the perfect position to pray.\nPatience is not sitting and waiting, it is foreseeing.",
+            "Your task is not to seek for love, but merely to seek all the barriers within yourself that you have built against it.\nLove is the bridge between you and everything.",
+            "Why should I be unhappy? Every parcel of my being is in full bloom.\nThere is a candle in your heart, ready to be kindled."
+        ];
+
         const donuts = [
             {
                 type: 'strawberry',
                 name: 'Strawberry Bliss',
                 desc: 'Sweet & bright',
-                decoration: '<div class="donut-sprinkle s1"></div><div class="donut-sprinkle s2"></div><div class="donut-sprinkle s3"></div>',
-                fortune: 'Let yourself be silently drawn by the sweet pull of what you truly love.\nIt will not lead you astray.'
+                decoration: '<div class="donut-sprinkle s1"></div><div class="donut-sprinkle s2"></div><div class="donut-sprinkle s3"></div>'
             },
             {
                 type: 'chocolate',
                 name: 'Chocolate Dream',
                 desc: 'Rich & indulgent',
-                decoration: '<div class="donut-drizzle"></div>',
-                fortune: 'The wound is the place where the Light enters you.\nEmbrace your depth, for it holds your greatest wisdom.'
+                decoration: '<div class="donut-drizzle"></div>'
             },
             {
                 type: 'vanilla',
                 name: 'Vanilla Cloud',
                 desc: 'Classic & comforting',
-                decoration: '<div class="donut-glaze"></div>',
-                fortune: 'In your light I learn how to love. In your beauty, how to make poems.\nYou dance inside my chest where no one sees you.'
+                decoration: '<div class="donut-glaze"></div>'
             },
             {
                 type: 'matcha',
                 name: 'Matcha Zen',
                 desc: 'Calm & balanced',
-                decoration: '<div class="donut-powder"></div>',
-                fortune: 'Let silence take you to the core of life.\nIn stillness, you will find what you have been seeking in motion.'
+                decoration: '<div class="donut-powder"></div>'
             },
             {
                 type: 'blueberry',
                 name: 'Blueberry Burst',
                 desc: 'Fresh & vibrant',
-                decoration: '<div class="donut-spots"></div>',
-                fortune: 'Let the beauty we love be what we do.\nThere are hundreds of ways to kneel and kiss the ground.'
+                decoration: '<div class="donut-spots"></div>'
             },
             {
                 type: 'caramel',
                 name: 'Caramel Swirl',
                 desc: 'Smooth & golden',
-                decoration: '<div class="donut-swirl"></div>',
-                fortune: 'The universe is not outside of you. Look inside yourself;\nEverything that you want, you already are.'
+                decoration: '<div class="donut-swirl"></div>'
             },
             {
                 type: 'raspberry',
                 name: 'Raspberry Rose',
                 desc: 'Delicate & lovely',
-                decoration: '<div class="donut-heart"></div>',
-                fortune: 'Your heart knows the way. Run in that direction.\nLet love be your compass, and kindness be your map.'
+                decoration: '<div class="donut-heart"></div>'
             },
             {
                 type: 'lemon',
                 name: 'Lemon Zest',
                 desc: 'Bright & sunny',
-                decoration: '<div class="donut-zest"></div>',
-                fortune: 'The morning breeze has secrets to tell you. Do not go back to sleep.\nYou must ask for what you really want.'
+                decoration: '<div class="donut-zest"></div>'
             },
             {
                 type: 'cookies',
                 name: 'Cookies & Cream',
                 desc: 'Fun & nostalgic',
-                decoration: '<div class="donut-chunks"></div>',
-                fortune: 'Live life as if everything is rigged in your favor.\nWhat you seek is seeking you, even in the simplest joys.'
+                decoration: '<div class="donut-chunks"></div>'
             },
             {
                 type: 'sprinkles',
                 name: 'Rainbow Sprinkles',
                 desc: 'Joyful & colorful',
-                decoration: '<div class="donut-rainbow"></div>',
-                fortune: 'Dance when you are broken open. Dance when you are whole.\nLet joy be your prayer, and celebration be your path.'
+                decoration: '<div class="donut-rainbow"></div>'
             }
         ];
 
         let selectedDonutIndex = null;
+
+        function getDailyFortuneForDonut(donutIndex) {
+            const today = new Date();
+            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+            // Create a unique seed for each donut by combining day of year with donut index
+            const seed = (dayOfYear * 997 + donutIndex * 7919) % fortunes.length;
+            return fortunes[seed];
+        }
 
         function initDonutGrid() {
             const grid = document.getElementById('donutGrid');
@@ -141,10 +180,10 @@
             document.getElementById('selectedTitle').textContent = donut.name;
             document.getElementById('selectedDesc').textContent = donut.desc;
 
-            // Show fortune
+            // Show fortune (unique for this donut today)
             const fortuneDisplay = document.getElementById('fortuneDisplay');
             const fortuneText = document.getElementById('fortuneText');
-            fortuneText.textContent = donut.fortune;
+            fortuneText.textContent = getDailyFortuneForDonut(index);
 
             fortuneDisplay.classList.add('visible');
             document.getElementById('fortuneSection').classList.add('active');
